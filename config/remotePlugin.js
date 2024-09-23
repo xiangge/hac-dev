@@ -12,6 +12,16 @@ const navExtensions = [
   {
     type: 'core.navigation/href',
     properties: {
+      href: '/application-pipeline/release/monitoring',
+      name: 'Release Monitoring',
+    },
+    flags: {
+      required: ['SIGNUP'],
+    },
+  },
+  {
+    type: 'core.navigation/href',
+    properties: {
       href: '/application-pipeline/workspaces',
       name: 'Applications',
     },
@@ -219,6 +229,20 @@ const routeExtensions = [
     },
     flags: {
       disallowed: ['SIGNUP'],
+    },
+  },
+  // release monitor page
+  {
+    type: 'core.page/route',
+    properties: {
+      path: '/application-pipeline/release/monitoring',
+      exact: true,
+      component: {
+        $codeRef: 'ReleaseMonitoringPage',
+      },
+    },
+    flags: {
+      required: ['SIGNUP'],
     },
   },
 
@@ -746,6 +770,7 @@ module.exports = {
       Redirect: resolve(__dirname, '../src/pages/RedirectPage'),
       NotFound: resolve(__dirname, '../src/pages/NotFoundPage'),
       GithubRedirect: resolve(__dirname, '../src/pages/GithubRedirectPage'),
+      ReleaseMonitoringPage: resolve(__dirname, '../src/pages/ReleaseMonitoringPage'),
     },
   },
   extensions: [

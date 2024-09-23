@@ -9,6 +9,8 @@ const betaOrStable = process.env.BETA ? 'beta' : 'stable';
 // for accessing prod-beta change this to 'prod-beta'
 const env = `${environment}-${betaOrStable}`;
 
+console.log(`-----env---------${env}`)
+
 setupDotenvFiles();
 
 const REGISTRATION_URL = process.env._REGISTRATION_URL;

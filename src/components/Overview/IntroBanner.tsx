@@ -98,6 +98,15 @@ const IntroBanner: React.FC<React.PropsWithChildren<unknown>> = () => {
                     View my applications
                   </Button>
                 ) : undefined}
+                 <Button
+                    className="intro-banner__cta"
+                    component={(props) => <Link {...props} to="/application-pipeline/release-monitoring" />}
+                    variant="secondary"
+                    data-test="view-my-applications"
+                    size="lg"
+                  >
+                    Release Monitoring Page
+                  </Button>
               </>
             )}
             {signupStatus === SignupStatus.PendingApproval && (
